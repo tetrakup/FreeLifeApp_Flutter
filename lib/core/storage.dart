@@ -12,13 +12,13 @@ class Storage {
 
     var counter = storage.getInt("launchCount");
 
-    if(counter== null){
-      
-    }
 
     if (runned == null) {
+      counter = 1;
+      await storage.setInt("launchCount", 1);
       return true;
     } else {
+      await storage.setInt("launchCount", counter! + 1); //bu kisimda c ounter'ın null olmayacagini garanti ediyoruz.
       return false;
     }
   }
