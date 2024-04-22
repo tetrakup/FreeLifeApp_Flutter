@@ -1,4 +1,6 @@
+import 'package:flutter_free_life_app/core/loader.dart';
 import 'package:flutter_free_life_app/screens/core/error.dart';
+import 'package:flutter_free_life_app/screens/static/boarding.dart';
 import 'package:go_router/go_router.dart';
 
 import '../screens/client/login.dart';
@@ -10,12 +12,21 @@ import '../screens/product/search.dart';
 import '../screens/static/about.dart';
 import '../screens/static/contact.dart';
 
+
 // GoRouter configuration
 final routes = GoRouter(
   errorBuilder: (context, state) => const ErrorScreen(), //hata alinca buraya git
   routes: [
     GoRoute(
+      path: '/boarding',
+      builder: (context, state) => const BoardingScreen(),
+    ),
+    GoRoute(
       path: '/',
+      builder: (context, state) => const LoaderScreen(),
+    ),
+    GoRoute(
+      path: '/home',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
