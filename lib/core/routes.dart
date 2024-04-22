@@ -1,3 +1,4 @@
+import 'package:flutter_free_life_app/screens/core/error.dart';
 import 'package:go_router/go_router.dart';
 
 import '../screens/client/login.dart';
@@ -11,6 +12,7 @@ import '../screens/static/contact.dart';
 
 // GoRouter configuration
 final routes = GoRouter(
+  errorBuilder: (context, state) => const ErrorScreen(), //hata alinca buraya git
   routes: [
     GoRoute(
       path: '/',

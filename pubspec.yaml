@@ -14,6 +14,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0 #sifrelemek icin
   flutter_secure_storage_linux: ^1.2.0
   flutter_svg: ^2.0.10+1 #iconlar icin
+  gap: ^3.0.1
   go_router: ^13.2.4 #navigasyon icin
   shared_preferences: ^2.2.3 #verileri kalici olrk tutmak icin
   url_launcher: ^6.2.6 #url acma
