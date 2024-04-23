@@ -74,6 +74,7 @@ class _BoardingScreenState extends State<BoardingScreen> {
     child: Align(
       alignment: Alignment.center, //hizalama için kullanilir.
       child: ListView.builder(
+        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: boardingData.length,
         itemBuilder: (context, index) => Icon(
