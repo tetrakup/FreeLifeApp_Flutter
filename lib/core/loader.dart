@@ -14,8 +14,7 @@ class _LoaderScreenState extends State<LoaderScreen> {
 //uyg. ilk calistiginda her ne yapilacaksa buradan yap. baslar
 loadApp()async {
   final storage = Storage(); //hafiza yoneticisinden nesne uretiyoruz
-  storage.clearStorage();
-  
+  //storage.clearStorage(); //uyg ilk girmiş haline döndürür.
   final firstLaunch = await storage.isFirstLaunch();
 
   if(firstLaunch){
