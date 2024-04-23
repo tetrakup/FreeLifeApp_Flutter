@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,10 +21,30 @@ loadApp()async {
 
   if(firstLaunch){
     //ilk calismaysa tanitima yonlendir.
+    //cihazin gece gunduz modna erismek
+    const darkMode = ThemeMode.system==ThemeMode.dark;
+    //cihazin varsayilan diline erismek icin
+    final String defaultLocate = Platform.localeName;
+    final langParts = defaultLocate.split("_"); //kelmeler arasina bosluk koyarak parcalar
+
+    final supportedLanguages = ["en", "tr", "fr", "es"]; //desteklenen diller
+    final finalLang; //kararlastirilan dil buraya yerlestirilecek
+
+    if(supportedLanguages.contains(langParts[0])){ //contains > iceriyor mu
+    finalLang = langParts[0];
+    }
+    else{
+      finalLang = "en";
+    } 
+
+    await storage.setConfig(language: finalLang, darkMode: darkMode);
+
+
     GoRouter.of(context).replace("/boarding");
   }
   else{
     //anasayfaya yonlendir
+    final config = await storage.getConfig();
     GoRouter.of(context).replace("/home");
   }
 }
