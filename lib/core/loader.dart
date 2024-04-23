@@ -16,7 +16,7 @@ class _LoaderScreenState extends State<LoaderScreen> {
 //uyg. ilk calistiginda her ne yapilacaksa buradan yap. baslar
 loadApp()async {
   final storage = Storage(); //hafiza yoneticisinden nesne uretiyoruz
-  //storage.clearStorage(); //uyg ilk girmiş haline döndürür.
+  storage.clearStorage(); //uyg ilk girmiş haline döndürür.//YORUMA ALICAM
   final firstLaunch = await storage.isFirstLaunch();
 
   if(firstLaunch){
@@ -44,6 +44,8 @@ loadApp()async {
   }
   else{
     //anasayfaya yonlendir
+    
+    //final config = await storage.getConfig();
     final config = await storage.getConfig();
     GoRouter.of(context).replace("/home");
   }

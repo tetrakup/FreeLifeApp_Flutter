@@ -46,7 +46,6 @@ class _BoardingScreenState extends State<BoardingScreen> {
               onTap: () async {
                 final storage = Storage();
                 await storage.firstLaunch();
-
                 GoRouter.of(context).replace("/home");
               },
               child:Padding(
